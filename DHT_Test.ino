@@ -311,6 +311,7 @@ void setup() {
 }
 
 
+/* We should never get as far as the loop() function. */
 void loop() {
     // Nuthin' to see here.  Move along now!
     ESP.restart();
