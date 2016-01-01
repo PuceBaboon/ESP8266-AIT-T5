@@ -178,7 +178,7 @@ void setup() {
     dtostrf(vdd, 4, 2, vbuff);	// Convert to ASCII and store.
 
     /*
-     *This delay is for use when testing =without= using deep-sleep
+     * This delay is for use when testing =without= using deep-sleep
      * and should normally be commented-out.
      */
 //    delay(LDELAY);    // Disable this loop delay if using deep-sleep.
