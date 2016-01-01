@@ -146,7 +146,6 @@ void DSleep() {
 #ifdef DEBUG
     Serial.println(F("Zzzz..."));
 #endif
-    // ESP.deepSleep(DSLEEP_SECS * 1000 * 1000, WAKE_RF_DISABLED);
     ESP.deepSleep(DSLEEP_SECS * 1000 * 1000);
 
     /*
@@ -178,7 +177,10 @@ void setup() {
     float vdd = ESP.getVcc() / 1000.0;	// Grab the current battery voltage.
     dtostrf(vdd, 4, 2, vbuff);	// Convert to ASCII and store.
 
-    /* This delay is for use when testing without deep-sleep. */
+    /*
+     *This delay is for use when testing =without= using deep-sleep
+     * and should normally be commented-out.
+     */
 //    delay(LDELAY);    // Disable this loop delay if using deep-sleep.
 
     getSensorData();
