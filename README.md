@@ -23,7 +23,6 @@ have to hand.  Of course, you'll need to connect a sensor, LED, etc., to your mo
 the T5 functionality, but in all honesty, that's probably easier than reworking an actual T5.
 
 **The DHT11_Test_Blinken.ino File**
-
 This file contains the same, basic code as the original (ie:- it uses MQTT and deep-sleep to
 create a stand-alone sensor module from the battery-powered T5 board).  However, it adds defines and
 some extra code to implement the red and green LEDs (in addition to the previously used blue) to
