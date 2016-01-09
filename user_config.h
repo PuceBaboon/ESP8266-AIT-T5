@@ -12,6 +12,8 @@
 #define LDELAY		10 * 1000	// Loop delay (10 seconds).
 #define DHT_PIN		2		// DHT11 sensor on ESP pin GPIO2.
 #define	BLED_PIN	5		// Blue-LED on ESP pin GPIO5.
+#define	GLED_PIN	14		// Green-LED on ESP pin GPIO14.
+#define	RLED_PIN	12		// Red-LED on ESP pin GPIO12.
 #define DSLEEP_SECS	600		// Deep-sleep time, in seconds (600 = 10-mins).
 
 /*
