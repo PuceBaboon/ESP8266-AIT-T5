@@ -8,9 +8,12 @@
  * ESP8266 SETUP
  */
 #define DEBUG		1		// Verbose output when set to anything.
+#define CLKWISE		0		// LED "spin" direction: Clockwise.
+#define CCLWISE		1		// Counter-clockwise.
 
 #define LDELAY		10 * 1000	// Loop delay (10 seconds).
 #define DHT_PIN		2		// DHT11 sensor on ESP pin GPIO2.
+#define K2_PIN		4		// Switch K2 on ESP pin GPIO4.
 #define	BLED_PIN	5		// Blue-LED on ESP pin GPIO5.
 #define	GLED_PIN	14		// Green-LED on ESP pin GPIO14.
 #define	RLED_PIN	12		// Red-LED on ESP pin GPIO12.
@@ -31,7 +34,7 @@
 #define WIFI_NETMSK	{ 255, 255, 255, 0 }
 #define WIFI_GATEWY	{ 192, 168, 1, 1 }
 #define WIFI_DNSSRV	{ 192, 168, 1, 2 }
-#define WIFI_CHANNEL	6		// Restart might be unreliable without this set.
+#define WIFI_CHANNEL	6		// !!You MUST change this!! -- Restart might be unreliable without this set.
 
 #define STA_SSID	"Zippy"		// !!You MUST change this!!
 #define STA_PASS	"Geoffrey"	// !!You MUST change this!!
