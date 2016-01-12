@@ -22,7 +22,7 @@ Do you need to use the AI Black-board T5?  Nope, you can basically use any ESP82
 have to hand.  Of course, you'll need to connect a sensor, LED, etc., to your module to duplicate
 the T5 functionality, but in all honesty, that's probably easier than reworking an actual T5.
 
-**The DHT11_Test_Blinken.ino File**
+####The DHT11_Test_Blinken.ino File
 This file contains the same, basic code as the original (ie:- it uses MQTT and deep-sleep to
 create a stand-alone sensor module from the battery-powered T5 board).  However, it adds defines and
 some extra code to implement the red and green LEDs (in addition to the previously used blue) to
@@ -32,9 +32,9 @@ If you haven't modified your T5 board to add the wiring from GPIO12 and GPIO14 t
 LEDs there's really no point in using this version; just stick with the original, non-Blinken
 instead.
 
-**Blinken_K2.ino**
+####Blinken_K2.ino
 This version adds support for the K2 "mode" switch.  At power-on, the ESP waits for 3-seconds
-before starting the main program.  If switch K2 is pressed during that wait time the program
+before starting the main program.  If switch K2 is pressed during that time the program
 switches into "Blinkenlights" mode.  At the end of the light show, the program will automatically
 drop back into the normal operating mode.  Additional differences are:-
 
