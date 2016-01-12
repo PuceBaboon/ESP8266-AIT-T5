@@ -31,3 +31,15 @@ display a "spinning wheel" type pattern at power on and subsequent deep-sleep wa
 If you haven't modified your T5 board to add the wiring from GPIO12 and GPIO14 to the red and green
 LEDs there's really no point in using this version; just stick with the original, non-Blinken
 instead.
+
+**Blinken_K2.ino**
+This version adds support for the K2 "mode" switch.  At power-on, the ESP waits for 3-seconds
+before starting the main program.  If switch K2 is pressed during that wait time the program
+switches into "Blinkenlights" mode.  At the end of the light show, the program will automatically
+drop back into the normal operating mode.  Additional differences are:-
+
+    - The power on indicator has changed to two, very brief flashes of the green LED.
+    - The DHT11 sensor-read indicator has changed to a brief flash of the red LED.
+      Note that the red LED may flash multiple times if the ESP sees bad data from
+      the DHT11 and re-tries the read operation.
+
