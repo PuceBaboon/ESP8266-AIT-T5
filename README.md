@@ -40,7 +40,7 @@ drop back into the normal operating mode.  Additional differences are:-
 
     - The power-on indicator has changed to two, very brief flashes of the green LED.
     - The DHT11 sensor-read indicator has changed to a brief flash of the red LED.
-      Note that the red LED may flash multiple times if the ESP sees _bad_ data from
+      Note that the red LED may flash multiple times if the ESP sees *bad* data from
       the DHT11 and re-tries the read operation.
 
 ###Quiet mode
