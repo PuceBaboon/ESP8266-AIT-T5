@@ -43,3 +43,10 @@ drop back into the normal operating mode.  Additional differences are:-
       Note that the red LED may flash multiple times if the ESP sees bad data from
       the DHT11 and re-tries the read operation.
 
+###Quiet mode
+To disable all of the output tothe console (with the exception of the "blinken" prompt) and all
+of the flashing LEDs, simply change the line in user_config.h which start with
+<code>#define DEBUG</code>
+to start with
+<code>#undef DEBUG</code>
+instead.
