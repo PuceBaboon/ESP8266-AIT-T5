@@ -45,7 +45,7 @@ drop back into the normal operating mode.  Additional differences are:-
 
 ###Quiet mode
 To disable all of the output to the console (with the exception of the "blinken" prompt) and all
-of the flashing LEDs, simply change the line in user_config.h which start with
+of the flashing LEDs, simply change the line in user_config.h which starts with
 <code>#define DEBUG</code>
 to start with
 <code>#undef DEBUG</code>
