@@ -16,7 +16,7 @@ timestamp publisher.  All it does is publish a regular timestamp
 in Unix "epoch" format to the topic "TIME/Epoch".  The delay
 between publications is settable (the default is 10 seconds).
 
-The timestamp is published using the "retain" flag, which means
+The timestamp is published using the "retain" flag, so
 that any client coming back on-line (for instance, from a
 deep-sleep) will receive the most recent timestamp immediately
 after (re-)subscribing to the topic, instead of having to wait
