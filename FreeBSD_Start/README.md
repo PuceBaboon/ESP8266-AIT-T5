@@ -45,7 +45,7 @@ It demonstrates a couple of useful functions of the more recent FreeBSD releases
 ###NOTES
 
 ####Install under /usr/local
-- The files in the sub-directories must be installed in the /usr/local tree, -not- at root level.
+- The files in the sub-directories must be installed in the <code>/usr/local</code> tree, **-not-** at root level.
 
 ####Chown and chmod
 - The files should be chowned to "nobody:nobody" (the default UID for this daemon) and chmoded to 0550.
