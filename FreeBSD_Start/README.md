@@ -31,11 +31,11 @@ server.
 ##Daemon Configuration
 It demonstrates a couple of useful functions of the more recent FreeBSD releases' rc structure:-.
 
-- Uses /usr/local/etc/rc.d for daemons which are not system standard.
+- Uses <code>/usr/local/etc/rc.d</code> for daemons which are not system standard.
 
 - Implements the "REQUIRE" dependency to ensure that the mosquitto parent process is started before the daemon.
 
-- Implements the daemon process as a "double-forked", detached child process.
+- Starts the actual shell-script daemon process as a "double-forked", detached child.
 
 - Demonstrates the use of the "command_interpreter" option to ensure that the (shell script) daemon process is recognized correctly when checking the process table.
 
