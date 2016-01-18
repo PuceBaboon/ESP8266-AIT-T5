@@ -31,23 +31,23 @@ server.
 ##Daemon Configuration
 It demonstrates a couple of useful functions of the more recent FreeBSD releases' rc structure:-.
 
--Uses /usr/local/etc/rc.d for daemons which are not system standard.
+- Uses /usr/local/etc/rc.d for daemons which are not system standard.
 
--Implements the "REQUIRE" dependency to ensure that the mosquitto parent process is started before the daemon.
+- Implements the "REQUIRE" dependency to ensure that the mosquitto parent process is started before the daemon.
 
--Implements the daemon process as a "double-forked", detached child process.
+- Implements the daemon process as a "double-forked", detached child process.
 
--Demonstrates the use of the "command_interpreter" option to ensure that the (shell script) daemon process is recognized correctly when checking the process table.
+- Demonstrates the use of the "command_interpreter" option to ensure that the (shell script) daemon process is recognized correctly when checking the process table.
 
--Uses a non-root UID to run the daemon process (in this case, "nobody").
+- Uses a non-root UID to run the daemon process (in this case, "nobody").
 
 
 ###NOTES
 
 ####Install under /usr/local
--The files in the sub-directories must be installed in the /usr/local tree, -not- at root level.
+- The files in the sub-directories must be installed in the /usr/local tree, -not- at root level.
 
 ####Chown and chmod
--The files should be chowned to "nobody:nobody" (the default UID for this daemon) and chmoded to 0550.
+- The files should be chowned to "nobody:nobody" (the default UID for this daemon) and chmoded to 0550.
 
 
