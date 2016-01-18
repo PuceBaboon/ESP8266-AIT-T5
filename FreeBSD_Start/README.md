@@ -24,39 +24,30 @@ until the next scheduled publication time.  What this means is
 that ESP8266 embedded sensors, which don't need millisecond
 accuracy, can quickly get a timestamp from the MQTT server
 without the overhead of an NTP client routine and embed it
-directly into the sensor data which they publish back to the
+directly into the sensor data which they then publish back to the
 server. 
 
 
 ##Daemon Configuration
-It demonstrates a couple of useful functions of the more recent
-FreeBSD releases' rc structure:-.
+It demonstrates a couple of useful functions of the more recent FreeBSD releases' rc structure:-.
 
-	_Uses /usr/local/etc/rc.d for daemons which are not
-system standard.
+-Uses /usr/local/etc/rc.d for daemons which are not system standard.
 
-	_Implements the "REQUIRE" dependency to ensure that
-the mosquitto parent process is started before the daemon.
+-Implements the "REQUIRE" dependency to ensure that the mosquitto parent process is started before the daemon.
 
-	_Implements the daemon process as a "double-forked",
-detached child process.
+-Implements the daemon process as a "double-forked", detached child process.
 
-	_Demonstrates the use of the "command_interpreter"
-option to ensure that the (shell script) daemon process is
-recognized correctly when checking the process table.
+-Demonstrates the use of the "command_interpreter" option to ensure that the (shell script) daemon process is recognized correctly when checking the process table.
 
-	_Uses a non-root UID to run the daemon process (in
-this case, "nobody").
+-Uses a non-root UID to run the daemon process (in this case, "nobody").
 
 
 ###NOTES
 
-	####Install under /usr/local
-	_The files in the sub-directories must be installed in
-the /usr/local tree, -not- at root level.
+####Install under /usr/local
+-The files in the sub-directories must be installed in the /usr/local tree, -not- at root level.
 
-	####Chown and chmod
-	_The files should be chowned to "nobody:nobody" (the
-default UID for this daemon) and chmoded to 0550.
+####Chown and chmod
+-The files should be chowned to "nobody:nobody" (the default UID for this daemon) and chmoded to 0550.
 
 
