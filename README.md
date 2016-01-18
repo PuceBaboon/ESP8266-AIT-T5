@@ -38,8 +38,15 @@ before starting the main program.  If switch K2 is pressed during that time the 
 switches into "Blinkenlights" mode.  At the end of the light show, the program will automatically
 drop back into the normal operating mode.  Additional differences are:-
 
-    - The power on indicator has changed to two, very brief flashes of the green LED.
+    - The power-on indicator has changed to two, very brief flashes of the green LED.
     - The DHT11 sensor-read indicator has changed to a brief flash of the red LED.
-      Note that the red LED may flash multiple times if the ESP sees bad data from
+      Note that the red LED may flash multiple times if the ESP sees *bad* data from
       the DHT11 and re-tries the read operation.
 
+###Quiet mode
+To disable all of the output to the console (with the exception of the "blinken" prompt) and all
+of the flashing LEDs, simply change the line in user_config.h which starts with
+<code>#define DEBUG</code>
+to start with
+<code>#undef DEBUG</code>
+instead.
