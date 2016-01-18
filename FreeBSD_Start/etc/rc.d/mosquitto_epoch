@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# $Id: mosquitto_epoch,v 1.1 2016/01/18 01:51:21 anoncvs Exp $
+#
+# Mosquitto "epoch" timestamp server.
+#
+# Add the following line to /etc/rc.conf to enable 
+# the m_epoch.sh daemon process:-
+#
+#	mosquitto_epoch_enable="YES"
+#
+
+# PROVIDE: mosquitto_epoch
+# REQUIRE: mosquitto
+# BEFORE: LOGIN
+
+
+. /etc/rc.subr
+
+name=mosquitto_epoch
+rcvar=mosquitto_epoch_enable
+procname=/usr/local/bin/m_epoch.sh
+command_interpreter=/bin/sh
+
+mosquitto_epoch_user=nobody
+mosquitto_epoch_enable=${mosquitto_epoch_enable:="NO"}
+mosquitto_epoch_config=${mosquitto_config:="/usr/local/etc/mosquitto/mosquitto_epoch.conf"}
+
+##-----------------------------
+
+command=/usr/local/bin/mosquitto_epoch
+command_args=
+pidfile=/var/run/${name}.pid
+required_files=
+
+# Handle the /var/run PID file (liberated from the ftp-proxy rc.d script).
+handle_pidfile() {
+	local search_string ps_pid
+	case $1 in
+		*start)
+			cmd_string=`basename ${procname:-${command}}`
+			eval flag_string=\"\$${name}_flags\"
+			# Determine the pid.
+			ps_pid=`ps ax -o pid= -o command= | grep $cmd_string | grep -e "$flag_string" | grep -v grep | awk '{ print $1 }'`
+			# Write the pidfile depending on $pidfile status.
+			echo $ps_pid > ${pidfile:-"/var/run/$name.pid"}
+	       		;;
+		stop)
+	       		rm -f $pidfile
+	       		;;
+	esac
+}
+
+extra_commands=
+
+load_rc_config $name
+run_rc_command "$1"
+handle_pidfile "$1"

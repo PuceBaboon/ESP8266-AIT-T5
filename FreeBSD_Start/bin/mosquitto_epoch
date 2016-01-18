@@ -1,0 +1,24 @@
+#!/bin/sh
+##
+## $Id: mosquitto_epoch,v 1.1 2016/01/18 01:50:25 anoncvs Exp $
+##
+## Wrapper to start the MQTT support client daemons.
+##
+PATH=/usr/bin;
+CL_PATH=/usr/local/bin;
+CLIENTS="m_epoch.sh ";
+
+Warn(){
+	echo "WARNING: ${*}";
+}
+
+for D_SH in "${CLIENTS}"; do
+	CLDS=${CL_PATH}/${D_SH};
+	[ ! -x ${CLDS} ] && Warn "Cannot execute: ${CLDS}" && continue;
+	## ${CLDS} 2>&1 &
+	( ${CLDS} & ) &		## Double fork to detach tty.
+	/bin/sleep 2;
+	printf " ${D_SH}";
+done
+
+exit 0;
