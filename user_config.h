@@ -5,13 +5,17 @@
  */
 
 /*
- * ESP8266 SETUP
+ * GENERAL SETUP
  */
-#define DEBUG		1		// Verbose output when set to anything.
+#define DEBUG		1		// Verbose output. "#undef" to disable.
+#define BLINKEN		1		// Enable "blinkenlights" option.
 #define CLKWISE		0		// LED "spin" direction: Clockwise.
 #define CCLWISE		1		// Counter-clockwise.
-
 #define LDELAY		10 * 1000	// Loop delay (10 seconds).
+
+/*
+ * ESP8266 SETUP
+ */
 #define DHT_PIN		2		// DHT11 sensor on ESP pin GPIO2.
 #define K2_PIN		4		// Switch K2 on ESP pin GPIO4.
 #define	BLED_PIN	5		// Blue-LED on ESP pin GPIO5.
@@ -49,16 +53,17 @@
 #define MQTT_PORT	1883
 #define MQTT_BUF_SIZE	2048
 #define MQTT_KEEPALIVE	120	/* In seconds. */
-#define MQCONDEL	150	/* MQTT connection wait delay */
+#define MQCONDEL	150	/* MQTT connection wait delay. */
 #define MQ_TOPIC_SIZE	256	/* Characters. */
-#define	TEMPR_SIZE	8	/* Temperature string conv temp storage */
+#define	TEMPR_SIZE	8	/* Temperature string conv temp storage. */
+#define STRBUFF_SIZE	15	/* String buffer size. */
 
 #define MQTT_CLIENT_ID	"Puce_%08X"
 #define MQTT_USER	"Puce_USER"
 #define MQTT_PASS	"Puce_PASS"
 
-#define TOPIC1		"/TEST/test"
-#define TOPIC2		"/tdata/raw"
-#define TOPIC3		"/temperature"
+#define TOPIC1		"TIME/Epoch"
+#define TOPIC2		"tdata/raw"
+#define TOPIC3		"temperature"
 
 #define MQTT_RECONNECT_TIMEOUT 	5	/* In Seconds. */
