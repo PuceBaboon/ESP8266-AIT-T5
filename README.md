@@ -56,7 +56,9 @@ The data published by the ESP8266 now looks like this:-
 * Relative Humidity.
 * VCC.
 
-**NOTE** The humidity readings from the DHT11 are all over the shop and everyone seems to agree that an upgrade to the slightly more expensive DHT22 is well worth the effort.
+**NOTE** The humidity readings from the DHT11 are all over the shop and everyone seems to agree that an upgrade to the slightly more expensive DHT22 is well worth the cost and effort involved.
+
+The other change with the Epoch version is that there is now a "BLINKEN" define in the user_config.h file.  This will disable the "blinkenlights" mode (and its associated 3-second delay at start-up) completely if the <code>#define</code> at the beginning of the line is changed to <code>#undef</code> instead.  Please note that this *only works* with the Epoch version of the code, not with any of the older versions.
 
 
 ###Quiet mode
