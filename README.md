@@ -42,6 +42,19 @@ drop back into the normal operating mode.  Additional differences are:-
 * The DHT11 sensor-read indicator has changed to a brief flash of the red LED.
     Note that the red LED may flash multiple times if the ESP sees *bad* data from the DHT11 and re-tries the read operation.
 
+####Blinken_K2_Epoch.ino
+This version changes the TOPICs (set in user_config.h) to drop the leading "/" character (apparently leading slashes are frowned upon in the MQTT world) and to change TOPIC1 to "TIME/Epoch".  This allows the ESP8266 to pick up a Unix "epoch" format timestamp from the (NTP controlled) MQTT server and add it to the sensor data before publishing.  This method gives reasonable accuracy without needing the extra overhead of an NTP client process on the ESP8266 itself.  The epoch time process on the MQTT server only publishes at 10-second intervals, but it runs with the "retain" flag set, which means any ESP module subscribing to the TIME/Epoch topic will receive the last published timestamp immediately, without having to wait for the next, scheduled publication.
+The data published by the ESP8266 now looks like this:-
+<code>1453168978, Puce_0006969A, 15.00C, 53.00%, 3.42V</CODE>
+...with the fields being
+* Epoch-format timestamp.
+* ESP8266 unique client-ID.
+* Temperature (Celsius).
+* Relative Humidity.
+* VCC.
+The humidity readings from the DHT11 are all over the shop and everyone seems to agree that an upgrade to the slightly more expensive DHT22 is well worth the effort.
+
+
 ###Quiet mode
 To disable all of the output to the console (with the exception of the "blinken" prompt) and all
 of the flashing LEDs, simply change the line in user_config.h which starts with
