@@ -16,7 +16,11 @@ The user_config.h file contains (yes, you've guessed it!) configuration settings
 to be updated to suit your particular network.  For instance, the SSID and password for your
 WiFi access-point (to which the ESP8266 will connect), as well as IP addresses for the module
 itself, default gateway (if you're connecting to the internet) and DNS server address.  You *must*
-set these before compiling and loading the firmware to your ESP8266.
+set these before compiling and loading the firmware to your ESP8266. **NOTE** If you set-up
+multiple ESP8266s on the same home network with any of the files below, you also need to ensure
+that every module has a **unique** IP address (user_config.h), otherwise bad things will happen
+and your network administrator will come after you with a pitchfork (type /pitchforks into your
+Google Hangouts window to see if you're in trouble yet :-)).
 
 Do you need to use the AI Black-board T5?  Nope, you can basically use any ESP8266 module you
 have to hand.  Of course, you'll need to connect a sensor, LED, etc., to your module to duplicate
