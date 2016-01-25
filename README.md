@@ -19,8 +19,8 @@ itself, default gateway (if you're connecting to the internet) and DNS server ad
 set these before compiling and loading the firmware to your ESP8266. **NOTE:-** If you set-up
 multiple ESP8266s on the same network with any of the files below, you also need to ensure
 that every module is given a **unique** IP address (in user_config.h), otherwise bad things will happen
-and your network administrator will come after you with a pitchfork (type /pitchforks into your
-Google Hangouts window to see if you're in trouble yet :-)).
+and your network administrator will come after you with a pitchfork (type <code>/pitchforks</code>
+into your Google Hangouts window to see if you're in trouble yet :-)).
 
 Do you need to use the AI Black-board T5?  Nope, you can basically use any ESP8266 module you
 have to hand.  Of course, you'll need to connect a sensor, LED, etc., to your module to duplicate
